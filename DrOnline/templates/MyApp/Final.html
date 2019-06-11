@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Final Appointments list page</title>
+    <style>
+
+table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 75%;
+}
+
+th {
+  height: 50px;
+}
+
+th {
+  text-align: left;
+}
+
+tr {
+  text-align: left;
+}
+td {
+  height: 35px;
+  vertical-align: bottom;
+}
+
+</style>
+</head>
+<body style="background-color:#BFC5C5;">
+<form align="center">
+    <h1>Final Appointments list page</h1>
+    {%if flist%}
+    <table border="1px" align="center">
+        <thead>
+        <th>id</th>
+        <th>Patient Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Timmings</th>
+        </thead>
+        {%for fin in flist%}
+        <tr>
+            <td>{{fin.id}}</td>
+            <td>{{fin.Patient_Name}}</td>
+            <td>{{fin.Age}}</td>
+            <td>{{fin.Gender}}</td>
+            <td>{{fin.Timmings}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+    {%else%}
+    <h1>Sorry on appointments done</h1>
+    {%endif%}
+</form>
+</body>
+</html>

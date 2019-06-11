@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load staticfiles%}
+<head>
+<meta charset="UTF-8">
+<title>DetailsPage</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <style>
+    #h2{
+    margin-left:35px;
+    }
+    body{
+    background-color:#BFC5C5;
+    }
+    #p
+    {
+    margin-left:35px;
+    }
+    #btno{
+    margin-left:35px;
+    }
+</style>
+</head>
+<body>
+<center>
+<h1 style="color:#F60B16;"> Kinara Super specality</h1>
+<h1 style="color:#F60B16;">Hospital</h1>
+</center><br><br>
+<div align="left" style="color:#1927E8;">
+<h2 align="left:100px" id="h2">Dr.Stephin Strange <sub style="font-size:15px">M.B.B.S  M.S</sub></h2>
+</div>
+<div id="p">
+<span align="left"><img align="left" src="{%static 'images/cal.png'%}" height="20px" width="20px"><b><h4>{{dt_now}}</h4></b></span>
+</div>
+<script type="text/javascript">
+var n=new Date();
+var t=n.getHours();
+if(t>12)
+{
+document.getElementById("btno").disabled=true;
+}
+else{
+document.getElementById("btno").disabled=false;
+}
+</script>
+<a href="/Op"><input type="submit" value="Application Form" id="btno" class="btn btn-primary"></a>
+<a href="/Final"><input type="submit" value="Final List" id="fl" class="btn btn-info"> </a>
+<marquee behavior="scroll" direction="left" style="font-size:15px; color:#FF0303;" ><span>(Note: No Appointment For Sataday&Sunday and Monday slots open on Sunday morning 7:00 AM)</span></marquee>
+</body>
+</html>
