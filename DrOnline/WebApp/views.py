@@ -4,6 +4,7 @@ from WebApp import forms
 from WebApp.models import OnlineOp
 import csv
 import datetime
+from django.contrib.auth.forms import AuthenticationForm
 # Create your views here.
 def Home(request):
     return render(request,"MyApp/Home.html")
@@ -26,9 +27,15 @@ def Op(request):
         else:
             return HttpResponseRedirect("/Failure")
     return render(request,'MyApp/Op.html',{'form':form})
-
+def Failure(request):
+    return render(request,'MyApp/Failure.html') 
+'''
+def LoginView(request):
+    form=AuthenticationForm()
+    returne render(request,'registration/login',{'form':form})
+'''
 def DownloadAllDetails(request):
-    res = HttpResponse(content_type="text\css")
+    res = HttpResponse(content_type="text/css")
     res['content-Disposition'] = 'attachment; filename="Appointmentslist.csv"'
     write = csv.writer(res)
     qs = OnlineOp.objects.all()

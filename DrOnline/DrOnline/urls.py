@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.auth import views
 from WebApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,6 +24,8 @@ urlpatterns = [
     path("Op/",views.Op),
     path("Success/",views.Success),
     path('Final/',views.Final),
+    path('Failure/',views.Failure),
     path('download/',views.DownloadAllDetails),
-
+  #  path('accounts/', include('django.contrib.auth.urls'))
+ #   path('login/',views.LoginView),
 ]

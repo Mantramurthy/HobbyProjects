@@ -35,16 +35,18 @@
 </div>
 <script type="text/javascript">
 var n=new Date();
-var t=n.getHours();
-if(t>12)
+var t=n.getHours()
+if(t>19&&t<20)
 {
-document.getElementById("btno").disabled=true;
+var x=document.getElementById("btno");
+x.disabled=true;
 }
 else{
-document.getElementById("btno").disabled=false;
+var y=document.getElementById("btno");
+y.disabled=false;
 }
 </script>
-<a href="/Op"><input type="submit" value="Application Form" id="btno" class="btn btn-primary"></a>
+<a href="/Op" ><input type="submit"  value="Application Form"  class="btn btn-primary" id="btno"></a>
 <a href="/Final"><input type="submit" value="Final List" id="fl" class="btn btn-info"> </a>
 <marquee behavior="scroll" direction="left" style="font-size:15px; color:#FF0303;" ><span>(Note: No Appointment For Sataday&Sunday and Monday slots open on Sunday morning 7:00 AM)</span></marquee>
 </body>
