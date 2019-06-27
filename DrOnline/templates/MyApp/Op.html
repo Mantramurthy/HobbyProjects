@@ -16,12 +16,14 @@
 <body>
 <form method="post">
 <center>
+<div class="form-group">
 <h1>Patient Details Form</h1>
     <table>
 {{form}}
 </table>
     {%csrf_token%}
 <input type="submit" class="btn btn-success">
+</div>
 </center>
 </form>
 </body>

@@ -1,0 +1,18 @@
+<html>
+<head>
+	<title>login page</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<center>
+ <h1>login</h1>
+ <form method="post">
+	<div class="form-group">
+	{{form.as_p}}
+	 {% csrf_token %}
+	 <input type="submit" value="login"> <input type="reset" value="Clear">
+		</div>
+	 </form>
+	</center>
+</body>
+</html>

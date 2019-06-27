@@ -28,12 +28,15 @@ def Op(request):
             return HttpResponseRedirect("/Failure")
     return render(request,'MyApp/Op.html',{'form':form})
 def Failure(request):
-    return render(request,'MyApp/Failure.html') 
-'''
-def LoginView(request):
-    form=AuthenticationForm()
-    returne render(request,'registration/login',{'form':form})
-'''
+    return render(request,'MyApp/Failure.html')
+
+def Admin(request):
+    return render(request,'registration/adminspage.html')
+def adminfinall(request):
+    flist = OnlineOp.objects.all()
+    return render(request,'MyApp/adminfinallist.html',{'flist':flist})
+
+
 def DownloadAllDetails(request):
     res = HttpResponse(content_type="text/css")
     res['content-Disposition'] = 'attachment; filename="Appointmentslist.csv"'
